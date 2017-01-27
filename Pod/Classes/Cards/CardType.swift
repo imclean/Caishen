@@ -112,11 +112,11 @@ extension CardType {
     }
     
     public var requiresExpiry: Bool {
-        return true
+        return false
     }
     
     public var requiresCVC: Bool {
-        return true
+        return false
     }
 
     public var numberGrouping: [Int] {

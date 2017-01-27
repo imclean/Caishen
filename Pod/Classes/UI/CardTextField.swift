@@ -500,7 +500,7 @@ open class CardTextField: UITextField, NumberInputTextFieldDelegate {
     }
     
     open func numberInputTextFieldDidComplete(_ numberInputTextField: NumberInputTextField) {
-        moveCardNumberOutAnimated()
+        
         
         notifyDelegate()
         hideExpiryTextFields = !cardTypeRegister.cardType(for: numberInputTextField.cardNumber).requiresExpiry
@@ -508,8 +508,10 @@ open class CardTextField: UITextField, NumberInputTextFieldDelegate {
         if hideExpiryTextFields && hideCVCTextField {
             return
         } else if hideExpiryTextFields {
+            moveCardNumberOutAnimated()
             cvcTextField.becomeFirstResponder()
         } else {
+            moveCardNumberOutAnimated()
             monthTextField?.becomeFirstResponder()
         }
     }
